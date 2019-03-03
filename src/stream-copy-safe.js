@@ -11,9 +11,7 @@ srcStream.on('data', data => {
   if (!canContinue) {
     // we are overflowing the destination, we should pause
     srcStream.pause()
+    // we will resume when the destination stream is drained
+    destStream.once('drain', () => srcStream.resume())
   }
 })
-
-// when drain is emitted by the writable destination, it is safe
-// to resume writing
-destStream.on('drain', () => srcStream.resume())
