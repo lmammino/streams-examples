@@ -26,6 +26,8 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
-    "emoji": "^0.3.2"
+    "emoji": "^0.3.2",
+    "pump": "^3.0.0",
+    "pumpify": "^1.5.1"
   }
 }
