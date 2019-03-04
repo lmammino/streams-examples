@@ -12,6 +12,7 @@ srcStream.on('data', data => {
   const canContinue = gzipStream.write(data)
   if (!canContinue) {
     srcStream.pause()
+    gzipStream.once('drain', () => srcStream.resume())
   }
 })
 
@@ -24,14 +25,11 @@ srcStream.on('end', () => {
   gzipStream.end()
 })
 
-gzipStream.on('drain', () => {
-  srcStream.resume()
-})
-
 gzipStream.on('data', data => {
   const canContinue = destStream.write(data)
   if (!canContinue) {
     gzipStream.pause()
+    destStream.once('drain', () => gzipStream.resume())
   }
 })
 
@@ -39,6 +37,4 @@ gzipStream.on('end', () => {
   destStream.end()
 })
 
-destStream.on('drain', () => {
-  gzipStream.resume()
-})
+// TODO: handle errors! >:)

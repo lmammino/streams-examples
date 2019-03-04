@@ -1,12 +1,23 @@
 'use strict'
 
-const { createCipheriv, createDecipheriv, randomBytes, createHash } = require('crypto')
+const {
+  createCipheriv,
+  createDecipheriv,
+  randomBytes,
+  createHash
+} = require('crypto')
 const { createGzip, createGunzip } = require('zlib')
 const pumpify = require('pumpify') // from npm
 
-function createWriteSafeStream (secret) {
+function getChiperKey (secret) {
+  return createHash('md5')
+    .update(secret)
+    .digest('hex')
+}
+
+function createEncgz (secret) {
   const initVect = randomBytes(16)
-  const cipherKey = createHash('md5').update(secret).digest('hex')
+  const cipherKey = getChiperKey(secret)
   const encryptStream = createCipheriv('aes256', cipherKey, initVect)
   const gzipStream = createGzip()
 
@@ -16,8 +27,8 @@ function createWriteSafeStream (secret) {
   return stream
 }
 
-function createReadSafeStream (secret, initVect) {
-  const cipherKey = createHash('md5').update(secret).digest('hex')
+function createDecgz (secret, initVect) {
+  const cipherKey = getChiperKey(secret)
   const decryptStream = createDecipheriv('aes256', cipherKey, initVect)
   const gunzipStream = createGunzip()
 
@@ -26,6 +37,6 @@ function createReadSafeStream (secret, initVect) {
 }
 
 module.exports = {
-  createWriteSafeStream,
-  createReadSafeStream
+  createEncgz,
+  createDecgz
 }
