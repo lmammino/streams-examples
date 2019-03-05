@@ -6,7 +6,7 @@ which explains Node.js streams main concepts.
 If you haven't seen this talk, make sure to checkout the slides to be able to fully
 enjoy the examples here.
 
-[![./images/cover.png]](https://loige.link/streams-dub)
+[![It's about time to embrace streams](./images/cover.png)](https://loige.link/streams-dub)
 
 ## Requirements
 
