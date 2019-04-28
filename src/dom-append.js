@@ -13,7 +13,9 @@ class DOMAppend extends Writable {
     const elem = document.createElement(this._tag)
     const content = document.createTextNode(chunk.toString())
     elem.appendChild(content)
+    elem.className = 'hidden'
     this._target.appendChild(elem)
+    elem.className = 'fade-in'
     done()
   }
 }
