@@ -2,18 +2,18 @@
 
 const { Transform } = require('readable-stream')
 
-class Stagger extends Transform {
-  constructor (delay, options) {
+class Delay extends Transform {
+  constructor (ms, options) {
     super(options)
-    this._delay = delay
+    this._ms = ms
   }
 
   _transform (chunk, encoding, done) {
     setTimeout(() => {
       this.push(chunk)
       done()
-    }, this._delay)
+    }, this._ms)
   }
 }
 
-module.exports = Stagger
+module.exports = Delay
