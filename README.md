@@ -1,12 +1,28 @@
 # streams-examples
 
-This repository contains the examples used for my talk [*It's about time to embrace streams*](https://loige.link/streams-dub),
+This repository contains the examples used for my talk **It's about time to embrace (Node.js) streams**,
 which explains Node.js streams main concepts.
 
 If you haven't seen this talk, make sure to checkout the slides to be able to fully
 enjoy the examples here.
 
-[![It's about time to embrace streams](./images/cover.png)](https://loige.link/streams-dub)
+These are different versions of this presentation from some of my previous talks:
+
+### Dublin JS (meetup)
+
+[![It's about time to embrace streams - Dublin JS](./images/cover-dublin.png)](https://loige.link/streams-dub)
+
+### Codemotion Rome
+
+[![It's about time to embrace Node.js streams - Codemotion Rome](./images/cover-rome.png)](https://loige.link/streams-rome)
+
+### CityJS London
+
+[![It's about time to embrace streams - CityJS London](./images/cover-london.png)](https://loige.link/streams-cityjs)
+
+### Node Ukraine
+
+[![It's about time to embrace streams - Node Ukraine Kyiv](./images/cover-kyiv.png)](https://loige.link/streams-kyiv)
 
 ## Requirements
 
