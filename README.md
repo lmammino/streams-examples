@@ -26,7 +26,7 @@ These are different versions of this presentation from some of my previous talks
 
 ### Node.js Austin Meetup
 
-[![It's about time to embrace Node.js streams - Node.js Austin Meetup](./images/cover-austin.png)](https://loige.link/streams-austin)
+[![It's about time to embrace Node.js streams - Node.js Austin Meetup](./images/cover-austin.jpg)](https://loige.link/streams-austin)
 
 ## Requirements
 
